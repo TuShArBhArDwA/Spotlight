@@ -15,7 +15,7 @@ const Header = ({ user }: Props) => {
   const router = useRouter()
 
   return (
-    <div className="w-full px-4 pt-10 sticky top-0 z-10 flex justify-between items-center flex-wrap gap-4 bg-background">
+    <div className="w-full px-6 md:px-8 lg:px-10 xl:px-12 pt-10 sticky top-0 z-10 flex justify-between items-center flex-wrap gap-4 bg-background">
       {pathname.includes('pipeline') ? (
         <Button
             className="bg-primary/10 border border-border rounded-xl"
