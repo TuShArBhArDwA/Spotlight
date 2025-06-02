@@ -37,7 +37,7 @@ const WebinarCard = ({ webinar }: Props) => {
       </Link>
 
       <Link
-      href={`/webinar/${webinar?.id}/pipeline`}
+      href={`/webinars/${webinar?.id}/pipeline`}
       className="flex px-4 py-2 rounded-md border-[0.5px] border-border bg-secondary"
     >
       <GitFork className="w-4 h-4" />
