@@ -90,7 +90,7 @@ const Page = () => {
           {/* Pass callback to update the state */}
           <StripeToggleButton
             initialConnected={isConnected}
-            onToggle={(newState: boolean) => {
+            onToggle={( newState: boolean) => {
                 setIsConnected(newState);
             }}
             />
