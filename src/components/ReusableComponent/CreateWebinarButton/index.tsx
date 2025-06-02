@@ -14,11 +14,12 @@ import MultiStepForm from './MultiStepForm'
 import BasicInfoStep from './BasicInfoStep'
 import CTAStep from './CTAStep'
 import AdditionalInfoStep from './AdditionalInfoStep'
+import SuccessStep from './SuccessStep'
 
 type Props = {}
 
 const CreateWebinarButton = (props: Props) => {
-  const { isModalOpen, setModalOpen,isComplete, setComplete} = useWebinarStore()
+  const { isModalOpen, setModalOpen,isComplete, setComplete,resetForm} = useWebinarStore()
   const [webinarLink,setWebinarLink]=useState('')
   const steps = [
   {
@@ -52,6 +53,10 @@ const CreateWebinarButton = (props: Props) => {
       `${process.env.NEXT_PUBLIC_BASE_URL}/live-webinar/${webinarId}`
     )
   }
+
+  const handleCreateNew=()=>{
+    resetForm()
+  }
   return (
     <Dialog open={isModalOpen} onOpenChange={setModalOpen}>
         <DialogTrigger asChild>
@@ -67,7 +72,10 @@ const CreateWebinarButton = (props: Props) => {
         {isComplete ? (
           <div className="bg-muted text-primary rounded-lg overflow-hidden">
             <DialogTitle className="sr-only">Webinar Created</DialogTitle>
-            {/* Success Step */}
+            <SuccessStep
+              webinarLink={webinarLink}
+              onCreateNew={handleCreateNew}
+            />
           </div>
         ) : (
           <>

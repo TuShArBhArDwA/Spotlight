@@ -48,7 +48,7 @@ const Page = async (props: Props) => {
         </PageHeader>
         <TabsContent
         value="all"
-        className="w-full grid grid-cols-1 sm:grid-cols-3 xl:grid-cols-4 place-items-start place-content-start px-6 md:px-8 lg:px-10 xl:px-12 gap-y-10"
+        className="w-full grid grid-cols-1 sm:grid-cols-3 xl:grid-cols-4 place-items-start place-content-start px-6 md:px-8 lg:px-10 xl:px-12 gap-y-10 gap-x-6"
         >
         {webinars?.length > 0 ? (
             webinars.map((webinar: Webinar, index: number) => (
